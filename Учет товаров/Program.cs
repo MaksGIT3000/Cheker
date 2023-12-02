@@ -4,10 +4,16 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Учет_товаров
+namespace Cheker
 {
     internal static class Program
     {
+        public static string Mail { get; set; }
+        public static string Password { get; set; }
+
+        public static string UserName { get; set; }
+
+        public static string Pos { get; set; }
         /// <summary>
         /// Главная точка входа для приложения.
         /// </summary>
@@ -16,7 +22,7 @@ namespace Учет_товаров
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new Registration());
         }
     }
 }
