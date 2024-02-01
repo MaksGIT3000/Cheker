@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             CloseBtn = new Button();
             FrutBtn = new Button();
             VegBtn = new Button();
@@ -41,16 +43,18 @@
             DrinkBtn = new Button();
             MilkBtn = new Button();
             listView = new ListView();
-            columnHeader2 = new ColumnHeader();
+            columnHeader1 = new ColumnHeader();
+            imageList1 = new ImageList(components);
             AddBtn = new Button();
             SuspendLayout();
             // 
             // CloseBtn
             // 
             CloseBtn.BackColor = Color.Red;
-            CloseBtn.Location = new Point(764, 12);
+            CloseBtn.FlatStyle = FlatStyle.Flat;
+            CloseBtn.Location = new Point(773, 3);
             CloseBtn.Name = "CloseBtn";
-            CloseBtn.Size = new Size(24, 23);
+            CloseBtn.Size = new Size(24, 24);
             CloseBtn.TabIndex = 0;
             CloseBtn.Text = "X";
             CloseBtn.UseVisualStyleBackColor = false;
@@ -168,19 +172,29 @@
             // 
             // listView
             // 
+            listView.Anchor = AnchorStyles.Bottom;
             listView.BackColor = Color.Lime;
-            listView.Columns.AddRange(new ColumnHeader[] { columnHeader2 });
-            listView.HeaderStyle = ColumnHeaderStyle.Nonclickable;
+            listView.Columns.AddRange(new ColumnHeader[] { columnHeader1 });
+            listView.HeaderStyle = ColumnHeaderStyle.None;
+            listView.LargeImageList = imageList1;
             listView.Location = new Point(197, 116);
             listView.Name = "listView";
             listView.Size = new Size(582, 447);
             listView.TabIndex = 0;
             listView.UseCompatibleStateImageBehavior = false;
+            listView.View = View.SmallIcon;
             listView.SelectedIndexChanged += listView1_SelectedIndexChanged;
             // 
-            // columnHeader2
+            // columnHeader1
             // 
-            columnHeader2.Width = 200;
+            columnHeader1.Width = 200;
+            // 
+            // imageList1
+            // 
+            imageList1.ColorDepth = ColorDepth.Depth32Bit;
+            imageList1.ImageStream = (ImageListStreamer)resources.GetObject("imageList1.ImageStream");
+            imageList1.TransparentColor = Color.Transparent;
+            imageList1.Images.SetKeyName(0, "4503859.png");
             // 
             // AddBtn
             // 
@@ -236,6 +250,7 @@
         private Button MilkBtn;
         private ListView listView;
         private Button AddBtn;
-        private ColumnHeader columnHeader2;
+        private ColumnHeader columnHeader1;
+        private ImageList imageList1;
     }
 }

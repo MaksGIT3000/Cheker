@@ -29,220 +29,261 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Tovar));
-            this.Tovarlabel = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.Photo = new System.Windows.Forms.Label();
-            this.Escape = new System.Windows.Forms.Button();
-            this.Change_avatar = new System.Windows.Forms.Button();
-            this.Description_tovar = new System.Windows.Forms.RichTextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.Ostalos = new System.Windows.Forms.Label();
-            this.Kolvo = new System.Windows.Forms.Label();
-            this.Count_weight = new System.Windows.Forms.Label();
-            this.Minus = new System.Windows.Forms.Button();
-            this.Plus = new System.Windows.Forms.Button();
-            this.SuspendLayout();
+            Tovarlabel = new Label();
+            nameTovar = new RichTextBox();
+            label1 = new Label();
+            label2 = new Label();
+            Escape = new Button();
+            DescriptionTovar = new RichTextBox();
+            button1 = new Button();
+            Ostalos = new Label();
+            Kolvo = new Label();
+            Count_weight = new Label();
+            Minus = new Button();
+            Plus = new Button();
+            priceTxt = new TextBox();
+            openFileDialog1 = new OpenFileDialog();
+            Change_avatar = new Button();
+            pictureBox1 = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            SuspendLayout();
             // 
             // Tovarlabel
             // 
-            this.Tovarlabel.AutoSize = true;
-            this.Tovarlabel.BackColor = System.Drawing.Color.Transparent;
-            this.Tovarlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Tovarlabel.Location = new System.Drawing.Point(276, 9);
-            this.Tovarlabel.Name = "Tovarlabel";
-            this.Tovarlabel.Size = new System.Drawing.Size(213, 73);
-            this.Tovarlabel.TabIndex = 0;
-            this.Tovarlabel.Text = "Товар";
+            Tovarlabel.AutoSize = true;
+            Tovarlabel.BackColor = Color.Transparent;
+            Tovarlabel.Font = new Font("Microsoft Sans Serif", 48F, FontStyle.Regular, GraphicsUnit.Point);
+            Tovarlabel.Location = new Point(322, 10);
+            Tovarlabel.Margin = new Padding(4, 0, 4, 0);
+            Tovarlabel.Name = "Tovarlabel";
+            Tovarlabel.Size = new Size(213, 73);
+            Tovarlabel.TabIndex = 0;
+            Tovarlabel.Text = "Товар";
+            Tovarlabel.Click += Tovarlabel_Click;
             // 
-            // richTextBox1
+            // nameTovar
             // 
-            this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.richTextBox1.Location = new System.Drawing.Point(315, 91);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(450, 38);
-            this.richTextBox1.TabIndex = 1;
-            this.richTextBox1.Text = "Название товара";
+            nameTovar.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Regular, GraphicsUnit.Point);
+            nameTovar.Location = new Point(368, 105);
+            nameTovar.Margin = new Padding(4, 3, 4, 3);
+            nameTovar.Name = "nameTovar";
+            nameTovar.Size = new Size(524, 43);
+            nameTovar.TabIndex = 1;
+            nameTovar.Text = "";
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(309, 157);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(87, 31);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Цена:";
+            label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
+            label1.Font = new Font("Microsoft Sans Serif", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Location = new Point(360, 181);
+            label1.Margin = new Padding(4, 0, 4, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(87, 31);
+            label1.TabIndex = 2;
+            label1.Text = "Цена:";
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(465, 157);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(66, 31);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "руб.";
-            // 
-            // Photo
-            // 
-            this.Photo.Location = new System.Drawing.Point(12, 91);
-            this.Photo.Name = "Photo";
-            this.Photo.Size = new System.Drawing.Size(275, 275);
-            this.Photo.TabIndex = 4;
+            label2.AutoSize = true;
+            label2.BackColor = Color.Transparent;
+            label2.Font = new Font("Microsoft Sans Serif", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Location = new Point(542, 181);
+            label2.Margin = new Padding(4, 0, 4, 0);
+            label2.Name = "label2";
+            label2.Size = new Size(66, 31);
+            label2.TabIndex = 3;
+            label2.Text = "руб.";
             // 
             // Escape
             // 
-            this.Escape.AutoSize = true;
-            this.Escape.BackColor = System.Drawing.Color.Red;
-            this.Escape.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Escape.Location = new System.Drawing.Point(764, 9);
-            this.Escape.Name = "Escape";
-            this.Escape.Size = new System.Drawing.Size(26, 25);
-            this.Escape.TabIndex = 5;
-            this.Escape.Text = "X";
-            this.Escape.UseVisualStyleBackColor = false;
+            Escape.AutoSize = true;
+            Escape.BackColor = Color.Red;
+            Escape.FlatStyle = FlatStyle.Flat;
+            Escape.Location = new Point(903, -1);
+            Escape.Margin = new Padding(4, 3, 4, 3);
+            Escape.Name = "Escape";
+            Escape.Size = new Size(30, 29);
+            Escape.TabIndex = 5;
+            Escape.Text = "X";
+            Escape.UseVisualStyleBackColor = false;
+            Escape.Click += Escape_Click;
             // 
-            // Change_avatar
+            // DescriptionTovar
             // 
-            this.Change_avatar.BackColor = System.Drawing.Color.Silver;
-            this.Change_avatar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Change_avatar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Change_avatar.Location = new System.Drawing.Point(12, 369);
-            this.Change_avatar.Name = "Change_avatar";
-            this.Change_avatar.Size = new System.Drawing.Size(275, 35);
-            this.Change_avatar.TabIndex = 6;
-            this.Change_avatar.Text = "Изменить аватар";
-            this.Change_avatar.UseVisualStyleBackColor = false;
-            // 
-            // Description_tovar
-            // 
-            this.Description_tovar.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Description_tovar.Location = new System.Drawing.Point(315, 208);
-            this.Description_tovar.Name = "Description_tovar";
-            this.Description_tovar.Size = new System.Drawing.Size(450, 196);
-            this.Description_tovar.TabIndex = 7;
-            this.Description_tovar.Text = "Описание товара";
+            DescriptionTovar.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Regular, GraphicsUnit.Point);
+            DescriptionTovar.Location = new Point(368, 240);
+            DescriptionTovar.Margin = new Padding(4, 3, 4, 3);
+            DescriptionTovar.Name = "DescriptionTovar";
+            DescriptionTovar.Size = new Size(524, 226);
+            DescriptionTovar.TabIndex = 7;
+            DescriptionTovar.Text = "";
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.Lime;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.Location = new System.Drawing.Point(330, 560);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(145, 28);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Сохранить";
-            this.button1.UseVisualStyleBackColor = false;
+            button1.BackColor = Color.Lime;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            button1.Location = new Point(385, 646);
+            button1.Margin = new Padding(4, 3, 4, 3);
+            button1.Name = "button1";
+            button1.Size = new Size(169, 32);
+            button1.TabIndex = 8;
+            button1.Text = "Сохранить";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += NewTovar_click;
             // 
             // Ostalos
             // 
-            this.Ostalos.AutoSize = true;
-            this.Ostalos.BackColor = System.Drawing.Color.Transparent;
-            this.Ostalos.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Ostalos.Location = new System.Drawing.Point(40, 423);
-            this.Ostalos.Name = "Ostalos";
-            this.Ostalos.Size = new System.Drawing.Size(113, 25);
-            this.Ostalos.TabIndex = 9;
-            this.Ostalos.Text = "Осталось:";
+            Ostalos.AutoSize = true;
+            Ostalos.BackColor = Color.Transparent;
+            Ostalos.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            Ostalos.Location = new Point(47, 488);
+            Ostalos.Margin = new Padding(4, 0, 4, 0);
+            Ostalos.Name = "Ostalos";
+            Ostalos.Size = new Size(113, 25);
+            Ostalos.TabIndex = 9;
+            Ostalos.Text = "Осталось:";
             // 
             // Kolvo
             // 
-            this.Kolvo.AutoSize = true;
-            this.Kolvo.BackColor = System.Drawing.Color.Transparent;
-            this.Kolvo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Kolvo.Location = new System.Drawing.Point(36, 454);
-            this.Kolvo.Name = "Kolvo";
-            this.Kolvo.Size = new System.Drawing.Size(60, 25);
-            this.Kolvo.TabIndex = 10;
-            this.Kolvo.Text = "1000";
+            Kolvo.AutoSize = true;
+            Kolvo.BackColor = Color.Transparent;
+            Kolvo.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            Kolvo.Location = new Point(42, 524);
+            Kolvo.Margin = new Padding(4, 0, 4, 0);
+            Kolvo.Name = "Kolvo";
+            Kolvo.Size = new Size(60, 25);
+            Kolvo.TabIndex = 10;
+            Kolvo.Text = "1000";
             // 
             // Count_weight
             // 
-            this.Count_weight.AutoSize = true;
-            this.Count_weight.BackColor = System.Drawing.Color.Transparent;
-            this.Count_weight.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Count_weight.Location = new System.Drawing.Point(94, 454);
-            this.Count_weight.Name = "Count_weight";
-            this.Count_weight.Size = new System.Drawing.Size(70, 25);
-            this.Count_weight.TabIndex = 11;
-            this.Count_weight.Text = "шт./кг";
+            Count_weight.AutoSize = true;
+            Count_weight.BackColor = Color.Transparent;
+            Count_weight.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            Count_weight.Location = new Point(110, 524);
+            Count_weight.Margin = new Padding(4, 0, 4, 0);
+            Count_weight.Name = "Count_weight";
+            Count_weight.Size = new Size(70, 25);
+            Count_weight.TabIndex = 11;
+            Count_weight.Text = "шт./кг";
             // 
             // Minus
             // 
-            this.Minus.AutoSize = true;
-            this.Minus.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.Minus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Minus.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Minus.Location = new System.Drawing.Point(5, 447);
-            this.Minus.Name = "Minus";
-            this.Minus.Size = new System.Drawing.Size(32, 37);
-            this.Minus.TabIndex = 12;
-            this.Minus.Text = "-";
-            this.Minus.UseVisualStyleBackColor = false;
+            Minus.AutoSize = true;
+            Minus.BackColor = SystemColors.ActiveBorder;
+            Minus.FlatStyle = FlatStyle.Flat;
+            Minus.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            Minus.Location = new Point(6, 516);
+            Minus.Margin = new Padding(4, 3, 4, 3);
+            Minus.Name = "Minus";
+            Minus.Size = new Size(37, 43);
+            Minus.TabIndex = 12;
+            Minus.Text = "-";
+            Minus.UseVisualStyleBackColor = false;
             // 
             // Plus
             // 
-            this.Plus.AutoSize = true;
-            this.Plus.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.Plus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Plus.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Plus.Location = new System.Drawing.Point(164, 448);
-            this.Plus.Name = "Plus";
-            this.Plus.Size = new System.Drawing.Size(37, 37);
-            this.Plus.TabIndex = 13;
-            this.Plus.Text = "+";
-            this.Plus.UseVisualStyleBackColor = false;
+            Plus.AutoSize = true;
+            Plus.BackColor = SystemColors.ActiveBorder;
+            Plus.FlatStyle = FlatStyle.Flat;
+            Plus.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            Plus.Location = new Point(191, 517);
+            Plus.Margin = new Padding(4, 3, 4, 3);
+            Plus.Name = "Plus";
+            Plus.Size = new Size(43, 43);
+            Plus.TabIndex = 13;
+            Plus.Text = "+";
+            Plus.UseVisualStyleBackColor = false;
+            // 
+            // priceTxt
+            // 
+            priceTxt.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            priceTxt.Location = new Point(454, 184);
+            priceTxt.Name = "priceTxt";
+            priceTxt.Size = new Size(77, 32);
+            priceTxt.TabIndex = 14;
+            // 
+            // openFileDialog1
+            // 
+            openFileDialog1.FileName = "openFileDialog1";
+            openFileDialog1.FileOk += openFileDialog1_FileOk;
+            // 
+            // Change_avatar
+            // 
+            Change_avatar.BackColor = Color.Silver;
+            Change_avatar.FlatStyle = FlatStyle.Flat;
+            Change_avatar.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            Change_avatar.Location = new Point(14, 426);
+            Change_avatar.Margin = new Padding(4, 3, 4, 3);
+            Change_avatar.Name = "Change_avatar";
+            Change_avatar.Size = new Size(321, 40);
+            Change_avatar.TabIndex = 6;
+            Change_avatar.Text = "Изменить аватар";
+            Change_avatar.UseVisualStyleBackColor = false;
+            Change_avatar.Click += Change_avatar_Click;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Location = new Point(24, 105);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(329, 290);
+            pictureBox1.TabIndex = 15;
+            pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
             // 
             // Tovar
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(800, 600);
-            this.ControlBox = false;
-            this.Controls.Add(this.Plus);
-            this.Controls.Add(this.Minus);
-            this.Controls.Add(this.Count_weight);
-            this.Controls.Add(this.Kolvo);
-            this.Controls.Add(this.Ostalos);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.Description_tovar);
-            this.Controls.Add(this.Change_avatar);
-            this.Controls.Add(this.Escape);
-            this.Controls.Add(this.Photo);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.richTextBox1);
-            this.Controls.Add(this.Tovarlabel);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Tovar";
-            this.Text = "Tovar";
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            ClientSize = new Size(933, 692);
+            ControlBox = false;
+            Controls.Add(pictureBox1);
+            Controls.Add(priceTxt);
+            Controls.Add(Plus);
+            Controls.Add(Minus);
+            Controls.Add(Count_weight);
+            Controls.Add(Kolvo);
+            Controls.Add(Ostalos);
+            Controls.Add(button1);
+            Controls.Add(DescriptionTovar);
+            Controls.Add(Change_avatar);
+            Controls.Add(Escape);
+            Controls.Add(label2);
+            Controls.Add(label1);
+            Controls.Add(nameTovar);
+            Controls.Add(Tovarlabel);
+            FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(4, 3, 4, 3);
+            Name = "Tovar";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Tovar";
+            Load += Tovar_Load;
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
-        private System.Windows.Forms.Label Tovarlabel;
-        private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label Photo;
-        private System.Windows.Forms.Button Escape;
-        private System.Windows.Forms.Button Change_avatar;
-        private System.Windows.Forms.RichTextBox Description_tovar;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label Ostalos;
-        private System.Windows.Forms.Label Kolvo;
-        private System.Windows.Forms.Label Count_weight;
-        private System.Windows.Forms.Button Minus;
-        private System.Windows.Forms.Button Plus;
+        private Label Tovarlabel;
+        private RichTextBox nameTovar;
+        private Label label1;
+        private Label label2;
+        private Button Escape;
+        private RichTextBox DescriptionTovar;
+        private Button button1;
+        private Label Ostalos;
+        private Label Kolvo;
+        private Label Count_weight;
+        private Button Minus;
+        private Button Plus;
+        private TextBox priceTxt;
+        private OpenFileDialog openFileDialog1;
+        private Button Change_avatar;
+        private PictureBox pictureBox1;
     }
 }
 
